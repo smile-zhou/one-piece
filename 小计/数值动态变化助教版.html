@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">500</div>
+
+  <script src="./js/vendor/jquery-1.12.4.js"></script>
+  <script>
+
+    var $box = $('#box');
+    var vul = $box.text();
+    var i = 0;
+    //第一种方法
+    $box.click(function () {
+      $box.text(0);
+      // 停顿1s显示0；
+      setTimeout(add, 1000);
+      function add() {
+        $box.text(i);
+        i++;
+        if (i <= 0) {
+          setTimeout(function () {
+            add(i);
+          }, 1000);
+        } else if (361 > i) {
+          setTimeout(function () {
+            add(i);
+          }, 1);
+        }
+      }
+    });
+//第二种方法
+  // $box.click(function(){
+  //   $box.text(0);
+  //   setTimeout(add,1000);
+  //   function add(){
+  //   $box.text(i);
+  //    i++;
+  //    if(316>i){
+  //      setTimeout(function(){
+  //        add(i);
+  //      },1);
+  //    }
+  // }
+  // });
+  </script>
+</body>
+
+</html>

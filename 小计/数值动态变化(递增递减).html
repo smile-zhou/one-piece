@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <span>
+    100
+  </span>
+  <script src="./js/vendor/jquery-1.12.4.js"></script>
+  <script>
+    var $span = $('span');
+    // num1 初始值;num2 目标值;a输出位置
+    var num1 = 0;
+    var num2 = 100;
+    timedCount(num1, num2, $span);
+
+    // 函数
+    function timedCount(num1, num2, a) {
+      num1++;
+      // 数值输出位置
+      a.text(num1);
+      // 小于目标值前不断调用自身
+      if (num1 < num2) {
+        setTimeout(function () {
+          timedCount(num1, num2, a)
+        }, 1);
+      }
+    }
+  </script>
+</body>
+
+</html>
